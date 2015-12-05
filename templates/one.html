@@ -1,25 +1,58 @@
-<div class='container'>
-	<h1 id="title">Get Started</h1>
-	<h2>fork this <a href="https://github.com/sainap/p5_tutorial">repo</a></h2>
-	<h3>Include in HTML<h3>
+<div class='container-fluid'>
+	<h1 id="title">Let's get started!</h1><br>
+
+	<h3>1. Fork and clone this <a href="https://github.com/sainap/p5_tutorial" target="_blank">repo</a></h3><br>
+
+	<h3>2. Copy &amp; paste the p5 library into index.html<h3>
 	<pre><code class="language-markup">		
-		&lt;script src="../p5.min.js">&lt;/script>
 		&lt;script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.19/p5.js">&lt;/script>
 	</code></pre>
-	<h3>Environment<h3>
-	<img ng-src="img/sublime2.png">
-	
-	<h3>Then</h3>
-	<p>Say something<p>
-	<pre><code class="language-markup">		
-		function setup() {
+	<h3>3. Open main.js and create a local host for the p5_tutorial folder <br> python -m SimpleHTTPServer 8080</h3><br>
 
-}
+	<h3>4. Set up <a href="http://p5js.org/reference/#/p5/createCanvas" target="_blank">createCanvas()</a> in function setUp() { <br> with parameters <br> w = displayWidth <br> h = displayHeight</h3>
+	<pre><code class="language-markup">		
+		createCanvas(displayWidth, displayHeight);
+	</code></pre><br>
+
+	<h3>5. Draw <a href="http://p5js.org/reference/#/p5/ellipse" target="_blank">ellipse()</a> in function Draw() { <br> with parameters <br> x = 100 <br> y = 100 <br> w = 50 <br> h = 50</h3>
+	<pre><code class="language-markup">		
+		ellipse(100, 100, 50, 50);
+		       x,   y,  w,  h
+	</code></pre><br>
+
+	<h3>6. Make <a href="http://p5js.org/reference/#/p5/mouseX" target="_blank">mouseX</a> and <a href="http://p5js.org/reference/#/p5/mouseY" target="_blank">mouseY</a> the x and y parameters of ellipse</h3>
+	<pre><code class="language-markup">		
+		ellipse(mouseX, mouseY, 50, 50);
+	</code></pre><br>
+
+	<h3>7. <a href="http://p5js.org/reference/#/p5/fill" target="_blank">fill()</a> the ellipse to <text style="color: blue;">blue</text> using R, G, B integer values</h3> <h4>note: the highest values for R, G, B is 255</h4> <h5>hint: put your fill(r, g, b) code before your ellipse(x, y, w, h) code </h5>
+	<pre><code class="language-markup">		
+		fill(0, 0, 255);
+		   R, G,  B
+	</code></pre><br>
+
+	<h3>8. Make <a href="http://p5js.org/reference/#/p5/mouseX" target="_blank">mouseX</a> and <a href="http://p5js.org/reference/#/p5/mouseY" target="_blank">mouseY</a> the R and G parameters of fill</h3> <h4>note: the highest values for R, G, B is 255</h4> <h5>hint: %255 will turn any value to be in the range of [0, 255]</h5>
+	<pre><code class="language-markup">		
+		fill(mouseX%255, mouseY%255, 255);
+	</code></pre><br>
+
+	<h3>9. Final Code </h3>
+	<img src="/img/one.png"></img>
+<!-- 	<pre><code class="language-markup">		
+		function setUp() {
+			createCanvas(displayWidth, displayHeight);
+		}
 
 		function draw() {
-		  		ellipse(50, 50, 80, 80);
-}
-	</code></pre>
+			stroke("white");
+			fill(mouseX%255, mouseY%255, 255);
+			ellipse(mouseX, mouseY, 50, 50);
+		}
+	</code></pre><br>	 -->
+
+	<h3><a href="http://p5js.org/reference/" target="_blank">References</a></h3>
+
 
 
 </div>
+
