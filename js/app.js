@@ -27,6 +27,9 @@ myApp.config(function($stateProvider) {
 
 // Home page controller: define $scope.number as a number
     .controller('IntroductionController', function($scope){
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip(); 
+        });
     })
 
 
