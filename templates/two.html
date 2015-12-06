@@ -1,23 +1,52 @@
 <div class='container'>
-	<h1 id="title">More about circle</h1>
-	<h3>Include in HTML<h3>
+	<h1 id="title">Draw a flower with press event</h1>
+	<h3>1. Set up a function<h3>
 	<pre><code class="language-markup">		
-		&lt;script src="../p5.min.js">&lt;/script>
-		&lt;script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.19/p5.js">&lt;/script>
+function flower() {
+
+}
 	</code></pre>
-	<h3>Environment<h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<h3>2. Set the <a href="http://p5js.org/reference/#/p5/stroke" target="_blank">stroke()</a> color and fill the flower <h3>
+	<h4>note: the fourth value stands for transparency (fully transparent -- 0, not transparent -- 255)</h4>
+	<pre><code class="language-markup">	
+stroke(255);
+fill(255, 0, 100, 130);
+	</code></pre>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	
-	<h3>Then</h3>
-	<p>Say something<p>
+	<h3>3.<a href="http://p5js.org/reference/#/p5/translate" target="_blank">translate()</a> object with your mouse position</h3>
 	<pre><code class="language-markup">		
-		function setup() {
+translate(mouseX, mouseY);
+	</code></pre>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-}
-
-		function draw() {
-		  		ellipse(50, 50, 80, 80);
+	<h3>3. Include a forloop to <a href="http://p5js.org/reference/#/p5/rotate" target="_blank">rotate()</a> ellipse</h3>
+	<h4>note: rotate(angle)</h4>
+	<pre><code class="language-markup">		
+for (var i = 0; i < 6; i++) {
+	ellipse(0, 0, 20, 80);
+rotate(PI/6);
 }
 	</code></pre>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<h3>4.Add press event</h3>
+	<pre><code class="language-markup">		
+if (mouseIsPressed) {
+    flower();
+}
+	</code></pre>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<h3>9. Final Code </h3>
+	<img id="code" src="/img/two.png"></img>
+
+	<h3><a href="http://p5js.org/reference/" target="_blank">References</a></h3>
+
+	<h3>See How it is like? Press your mouse!</h3>
+	<iframe scrolling="no" src="http://students.washington.edu/yutonp/info343/demo-2/"></iframe>
 
 
 </div>

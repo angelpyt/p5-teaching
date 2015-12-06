@@ -21,7 +21,12 @@ myApp.config(function($stateProvider) {
     .state('three', {
         url:'/three',
         templateUrl: 'templates/three.html',
-        controller: 'threeController'     
+        controller: 'ThreeController'     
+    })
+    .state('four', {
+        url:'/four',
+        templateUrl: 'templates/four.html',
+        controller: 'FourController'     
     })
 })
 
@@ -51,5 +56,8 @@ myApp.config(function($stateProvider) {
 
 // Contact controller: define $scope.url as an image
     .controller('ThreeController', function($scope){
+    })
+
+    .controller('FourController', function($scope){
     })
 

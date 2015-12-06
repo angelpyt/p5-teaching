@@ -104,3 +104,6 @@ iframe {
   border: none;
 }
 
+#code {
+	width: 300px;
+}
