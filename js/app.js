@@ -27,7 +27,6 @@ myApp.config(function($stateProvider) {
 
 // Home page controller: define $scope.number as a number
     .controller('IntroductionController', function($scope){
-      $scope.number = 6
     })
 
 
