@@ -1,5 +1,5 @@
 <div class='container'>
-	<h1 id="title">Let's add sound to it</h1>
+	<h1 id="title">What else can we do with sound?</h1>
 	<h3>1. Define new mic and P5.SpeechRec objectL<h3>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">		
@@ -12,27 +12,51 @@ var myRec = new p5.SpeechRec();
 	<pre><code class="language-markup">	
 myRec.continuous = true; 
 myRec.interimResults = true;
+var rcb;
 	</code></pre>
 	
-	<h3>3. In function setup(), input microphone volume and <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> mic</h3>
+	<h3>3.In setup function, input microphone volume and <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> mic along with create canvas</h3>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">		
- mic = new p5.AudioIn();
- mic.start(); 
+var myCanvas = createCanvas(displayWidth,displayHeight);
+noFill();
+mic = new p5.AudioIn();
+mic.start();
 	</code></pre>
 
-	<h3>4. Include mic in draw() & add mic to ellipse <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> mic</h3>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<h3>3.Recognition callback and <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> engine</h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">		
-micLevel = mic.getLevel();
-ellipse(mouseX, mouseY, 50 + micLevel*500, 50+ micLevel*500);
+  myRec.onResult = rcb;
+  myRec.start();
+  	</code></pre>
+
+	<h3>3.Set a variable mostrecentword as the strong of myRec</h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<pre><code class="language-markup">		
+var mostrecentword = myRec.resultString;  
 	</code></pre>
 
-	<h3>5. Final Code </h3>
-	<img id="code" src="img/three.png"></img>
-	<h3>See How it is like? Say Something!</h3>
-	<iframe scrolling="no" src="http://students.washington.edu/yutonp/info343/demo-3/"></iframe>
+	<h3>3.Display mostrecentword in screen</h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<pre><code class="language-markup">		
+text(mostrecentword, 100, 100);
+textSize(32);
+fill(255, 0, 100, 130); 
+	</code></pre>
 
+	<h3>3.Call rcb</h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<pre><code class="language-markup">		
+rcb = resultCallback; 
+	</code></pre>
+
+
+	<img id="code" src="img/four.png"></img>
+
+
+	<h3>Complete Version. Say something!</h3>
+	<iframe height="500" scrolling="no" src="http://students.washington.edu/parsis/info343/p5_tutorial/"></iframe>
 
 
 </div>
