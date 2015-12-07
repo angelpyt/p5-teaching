@@ -1,38 +1,39 @@
 <div class='container'>
 	<h1 id="title">Let's add sound to it</h1>
-	<h3>1. Define new mic and P5.SpeechRec objectL<h3>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<h3>1. Define new mic and P5.SpeechRec object<h3>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">		
 var mic;
 var myRec = new p5.SpeechRec();
 	</code></pre>
 
 	<h3>2. Continous recognition/Partial recognition<h3>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">	
 myRec.continuous = true; 
 myRec.interimResults = true;
 	</code></pre>
 	
 	<h3>3. In function setup(), input microphone volume and <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> mic</h3>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">		
  mic = new p5.AudioIn();
  mic.start(); 
 	</code></pre>
 
-	<h3>4. Include mic in draw() & add mic to ellipse <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> mic</h3>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<h3>4. Include mic in draw() &amp; add mic to ellipse <a href="http://p5js.org/reference/#/p5.AudioIn" target="_blank">start()</a> mic</h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<pre><code class="language-markup">		
 micLevel = mic.getLevel();
 ellipse(mouseX, mouseY, 50 + micLevel*500, 50+ micLevel*500);
 	</code></pre>
-
+	
 	<h3>5. Final Code </h3>
 	<img id="code" src="img/three.png"></img>
-	<h3>See How it is like? Say Something!</h3>
-	<iframe scrolling="no" src="http://students.washington.edu/yutonp/info343/demo-3/"></iframe>
+	<br>
 
+	<h3>Complete Version. Say something!</h3>
+	<br>
 
-
+	<iframe height="500" scrolling="no" src="http://students.washington.edu/yutonp/info343/demo-3/"></iframe>
 </div>
