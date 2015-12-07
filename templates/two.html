@@ -1,21 +1,37 @@
 <div class='container'>
-	<h1 id="title">Draw a flower with press event</h1>
-	<h3>1. Set up a function called flower<h3>
+	<h1 id="title">Draw a flower with a on-click event</h1><br>
+
+	<h3>1. Create a function called flower outside of your draw() function<h3>
 	<pre><code class="language-markup">		
 function flower() {
 
 }
 	</code></pre>
 
-	<h3>2.<a href="http://p5js.org/reference/#/p5/translate" target="_blank">translate()</a> object with your mouse position</h3>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<h3>2. Set the <a href="http://p5js.org/reference/#/p5/stroke" target="_blank">stroke()</a> color to white and<br> fill the flower to a color using any R, G, B values<h3>
+	<h4>note: you may add the fourth parameter (transparency) in fill <br> (full transparency -- 0, no transparency -- 255)</h4>
+	<h5>hint: you can use mouseX and mouseY if you'd like!</h5>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	<h3>Step 2 Answer </h3><br>
+	<pre><code class="language-markup">	
+stroke("white");
+fill(255, 0, 100, 130);
+	</code></pre>
+	
+	<h3>3. <a href="http://p5js.org/reference/#/p5/translate" target="_blank">translate()</a> the flower with your mouse position</h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<h3>Step 3 Answer </h3><br>
 	<pre><code class="language-markup">		
 translate(mouseX, mouseY);
 	</code></pre>
 
-	<h3>3. Include a forloop to <a href="http://p5js.org/reference/#/p5/rotate" target="_blank">rotate()</a> <a href="http://p5js.org/reference/#/p5/ellipse" target="_blank">ellipse</a></h3>
+	<h3>4. Include a forloop to <a href="http://p5js.org/reference/#/p5/rotate" target="_blank">rotate()</a> a <a href="http://p5js.org/reference/#/p5/ellipse" target="_blank">ellipse() </a> with parameters (0, 0, 20, 80) by PI/6</h3>
 	<h4>note: rotate(angle)</h4>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	<h3>Step 4 Answer </h3><br>
 	<pre><code class="language-markup">		
 for (var i = 0; i < 6; i++) {
 	ellipse(0, 0, 20, 80);
@@ -23,16 +39,10 @@ rotate(PI/6);
 }
 	</code></pre>
 
-	<h3>4. Set the <a href="http://p5js.org/reference/#/p5/stroke" target="_blank">stroke()</a> color and fill the flower <h3>
-	<h4>note: you may add the fourth value in fill, which stands for transparency (fully transparent -- 0, not transparent -- 255)</h4>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<pre><code class="language-markup">	
-stroke(255);
-fill(255, 0, 100, 130);
-	</code></pre>
-
-	<h3>5.Add press event</h3>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<h3>5. Add a mouse <a href="http://p5js.org/reference/#/p5/mouseIsPressed" target="_blank">press</a> event in your draw() function to call flower() </h3>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	<h3>Step 5 Answer </h3><br>
 	<pre><code class="language-markup">		
 if (mouseIsPressed) {
     flower();
@@ -41,11 +51,13 @@ if (mouseIsPressed) {
 
 	<h3>6. Final Code </h3>
 	<img id="code" src="img/two.png"></img>
+	<br>
+
+	<h3>Complete Version. Press and drag your mouse!</h3>
+	<br>
+
+	<iframe height="500" scrolling="no" src="http://students.washington.edu/yutonp/info343/demo-2/"></iframe>
 
 	<h3><a href="http://p5js.org/reference/" target="_blank">References</a></h3>
-
-	<h3>See How it is like? Press your mouse!</h3>
-	<iframe scrolling="no" src="http://students.washington.edu/yutonp/info343/demo-2/"></iframe>
-
-
+	<br>
 </div>
